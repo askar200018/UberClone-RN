@@ -6,16 +6,38 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "lint": "eslint 'src/**/*.{js,jsx}' 'App.jsx'  --config ./.eslintrc.json --max-warnings 0",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,json}' 'App.jsx' --config ./.eslintrc.json",
+    "prettier-write": "prettier --write 'src/**/*.{js,ts,jsx,md,graphql}' 'App.jsx' --config ./.prettierrc",
+    "prettier-check": "prettier --check 'src/**/*.{js,ts,jsx,md,graphql}' 'App.jsx' --config ./.prettierrc",
+    "circular-dependencies": "madge ./App.jsx --circular"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.0.13",
+    "@react-navigation/native-stack": "^6.9.1",
+    "@reduxjs/toolkit": "^1.8.6",
     "expo": "~46.0.16",
     "expo-status-bar": "~1.4.0",
     "react": "18.0.0",
-    "react-native": "0.69.6"
+    "react-native": "0.69.6",
+    "react-native-safe-area-context": "^4.3.1",
+    "react-native-screens": "~3.15.0",
+    "react-redux": "^8.0.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "eslint": "^8.25.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-native": "^4.0.0",
+    "madge": "^5.0.1",
+    "prettier": "^2.7.1"
   },
   "private": true
 }
